@@ -52,9 +52,16 @@ public class Number_in_diff_systems {
         return reverse(res);
     }
 
-    /*public String to_num_system_of_hex(){
+   /*public String to_num_system_of_hex(){
         String res = "";
         int number_copy = number;
+
+        while (number_copy != 0){
+            res += number_copy % 8;
+            number_copy /= 8;
+        }
+
+        return reverse(res);
     }*/
 
 }

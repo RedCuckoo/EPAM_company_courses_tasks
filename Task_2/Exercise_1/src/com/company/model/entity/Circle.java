@@ -1,4 +1,4 @@
-package com.company;
+package com.company.model.entity;
 import java.lang.Math;
 
 public class Circle extends Shape {
@@ -18,8 +18,4 @@ public class Circle extends Shape {
     @Override
     public double calcArea() { return (Math.PI * radius * radius); }
 
-    @Override
-    public void draw() {
-        System.out.printf("%s; area=%.2f\n", this, calcArea());
-    }
 }

@@ -1,6 +1,8 @@
-package com.company;
+package com.company.model.entity;
 
-public abstract class Shape implements Drawable{
+import com.company.model.Drawable;
+
+public abstract class Shape implements Drawable {
     private String shapeColor;
 
     public String getShapeColor() {
@@ -21,4 +23,8 @@ public abstract class Shape implements Drawable{
     }
 
     public abstract double calcArea();
+
+    public String draw() {
+        return String.format("%s; area=%.2f\n", this, calcArea());
+    }
 }

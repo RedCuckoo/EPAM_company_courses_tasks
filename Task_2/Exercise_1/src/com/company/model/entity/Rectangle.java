@@ -1,4 +1,4 @@
-package com.company;
+package com.company.model.entity;
 
 public class Rectangle extends Shape {
     private double w;
@@ -20,8 +20,4 @@ public class Rectangle extends Shape {
     @Override
     public double calcArea() { return w * h; }
 
-    @Override
-    public void draw() {
-        System.out.printf("%s; area=%.2f\n", this, calcArea());
-    }
 }

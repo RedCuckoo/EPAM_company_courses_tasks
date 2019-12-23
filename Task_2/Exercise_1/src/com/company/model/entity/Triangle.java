@@ -1,4 +1,4 @@
-package com.company;
+package com.company.model.entity;
 import java.lang.Math;
 
 public class Triangle extends Shape {
@@ -24,14 +24,7 @@ public class Triangle extends Shape {
     @Override
     public double calcArea() {
         double halfPerimeter = (a+b+c)/2;
-        if (a +b <c || b+c<a || a+c<b){
-            return -1;
-        }
         return Math.sqrt(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c));
     }
 
-    @Override
-    public void draw() {
-        System.out.printf("%s; area=%.2f\n", this, calcArea());
-    }
 }

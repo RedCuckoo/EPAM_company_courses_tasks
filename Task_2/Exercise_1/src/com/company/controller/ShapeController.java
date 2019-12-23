@@ -28,12 +28,7 @@ public class ShapeController {
         Comparator comparator = null;
         switch (criteria){
             case "area":
-                comparator = new Comparator<Shape>() {
-                    @Override
-                    public int compare(Object o, Object t1) {
-                        return 0;
-                    }
-                }; break;
+                comparator = new ComparatorIncrease(); break;
             case "color":
                 comparator = new ComparatorColorIncrease(); break;
             default: view.viewData("Invalid criteria!");

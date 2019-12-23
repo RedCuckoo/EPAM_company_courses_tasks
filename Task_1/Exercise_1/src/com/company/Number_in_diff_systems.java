@@ -1,8 +1,5 @@
 package com.company;
 
-import javax.xml.datatype.DatatypeConfigurationException;
-import java.lang.Math;
-
 public class Number_in_diff_systems {
     int number;
 
@@ -25,22 +22,16 @@ public class Number_in_diff_systems {
     public String to_binary(){
         String res = "";
         int number_copy = number;
-        int check_number = 0, degree_counter = 0;
-        while (check_number != number){
-            if (to_boolean(number_copy & 0b1)){
-                res += '1';
-                check_number += Math.pow(2, degree_counter);
-            }
-            else {
-                res += '0';
-            }
-            ++degree_counter;
-            number_copy >>>= 1;
+
+        while (number_copy != 0){
+            res += number_copy % 2;
+            number_copy /= 2;
         }
+
         return reverse(res);
     }
 
-    public String to_num_system_of_eight(){
+    public String to_octal(){
         String res = "";
         int number_copy = number;
 
@@ -52,16 +43,40 @@ public class Number_in_diff_systems {
         return reverse(res);
     }
 
-   /*public String to_num_system_of_hex(){
+    public String to_hex(){
         String res = "";
         int number_copy = number;
-
+        int temp;
         while (number_copy != 0){
-            res += number_copy % 8;
-            number_copy /= 8;
+            temp = number_copy % 16;
+            if(temp>9){
+                switch(temp){
+                    case (10):
+                        res += "A";
+                        break;
+                    case (11):
+                        res += "B";
+                        break;
+                    case (12):
+                        res += "C";
+                        break;
+                    case (13):
+                        res += "D";
+                        break;
+                    case (14):
+                        res += "E";
+                        break;
+                    case (15):
+                        res += "F";
+                        break;
+                }
+            }
+            else{
+                res += temp;
+            }
+            number_copy /= 16;
         }
 
         return reverse(res);
-    }*/
-
+    }
 }
